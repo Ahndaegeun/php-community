@@ -1,0 +1,86 @@
+body {
+  height: 100vh;
+}
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+header h1 a {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Main */
+main {
+  height: calc(100vh - 76px - 53px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main section {
+  border: 1px solid black;
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.contents-container {
+  overflow-y: scroll;
+  height: 93%;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.contents-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.section-header,
+.section-contents {
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: .5fr 4fr 1fr 1fr;
+  background: black;
+  gap: 1px;
+  margin-bottom: 5px;
+}
+
+.section-contents {
+  border-top: 1px solid black;
+}
+
+.section-header li,
+.section-contents li{
+  text-align: center;
+  background: white;
+  padding: 10px;
+}
+
+.section-contents li a {
+  display: block;
+  width: 100%;
+}
+
+.write-btn {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+
+}
+
+/* Footer */
+footer {
+  background: black;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+}
