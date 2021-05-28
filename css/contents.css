@@ -1,0 +1,11 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  border: 1px solid orange;
+  padding: 10px;
+}

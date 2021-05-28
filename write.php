@@ -13,6 +13,7 @@
   <form class="write-form" action="write-process.php" method="post" name="form">
     <input name="idx" type="hidden">
     <input name="title" type="text" placeholder="Title">
+    <input name="author" type="text" placeholder="Name">
     <textarea name="contents" placeholder="Contents"></textarea>
     <button class="submit-btn" type="button">제출</button>
   </form>

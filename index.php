@@ -1,3 +1,7 @@
+<?php
+require('lib/sql.php');
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,12 +27,17 @@
         <li>Time</li>
       </ul>
       <div class="contents-container">
-        <ul class="section-contents">
-          <li>1</li>
-          <li><a href="#">Today is...</a></li>
-          <li>kade</li>
-          <li>2021-05-28</li>
-        </ul>
+        <?php
+          for($i = 0; $i < $row_count; $i++) {
+            $row = mysqli_fetch_array($result);
+            echo '<ul class="section-contents">
+            <li>'.$row["idx"].'</li>
+            <li><a href="contents.php?id='.$row['idx'].'">'.$row["title"].'</a></li>
+            <li>'.$row["author"].'</li>
+            <li>'.$row["date"].'</li>
+          </ul>';
+          }
+        ?>
       </div>
       <a href="write.php" class="write-btn">글작성</a>
     </section>
