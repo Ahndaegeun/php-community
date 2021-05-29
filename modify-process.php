@@ -1,17 +1,15 @@
 <?php
 require('lib/sql.php');
 
-$pageNum = $_POST['idx'];
+$idx = $_POST['idx'];
+$title = $_POST['title'];
+$author = $_POST['author'];
+$contents = $_POST['contents'];
 
-// $result = mysqli_query($conn, $query);
-// $row = mysqli_fetch_array($result);
 
-// $query = "update contents 
-//   set title = ".$row['title'].",
-//     contents = ".$row['contents'].",
-//     author = ".$row['author']."
-//   where idx=".$row['idx']."";
-echo pageNum;
+$sql = "update contents set title = '$title', contents = '$contents', author = '$author' where idx= $idx";
+
+$result = mysqli_query($conn, $sql);
 ?>
 
 <script>

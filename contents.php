@@ -1,6 +1,8 @@
 <?php
 require('lib/sql.php');
 
+session_start();
+
 $pageNum = $_GET['id'];
 $query = "select * from contents where idx='$pageNum'";
 $result = mysqli_query($conn, $query);
@@ -24,6 +26,22 @@ $row = mysqli_fetch_array($result);
     <li>Date <?=$row['date'] ?></li>
     <li>Author <?=$row['author'] ?></li>
   </ul>
-  <a href="modify.php?id=<?=$row['idx']?>">수정하기</a>
+  <?php
+    if($_SESSION['userid'] === $row['author']) {?>
+    <a href="modify.php?id=<?=$row['idx']?>">수정하기</a>
+    <form class='frm' action="delete-process.php" method="post">
+      <input type="hidden" name='userid' value="<?= $row['author']?>">
+      <input type="hidden" name="idx" value="<?= $row['idx']?>">
+      <button type='button' onClick=del()>삭제하기</button>
+    </form>
+  <?php }?>
+<script>
+function del() {
+  const res = confirm('삭제?');
+  if(res) {
+    document.querySelector('.frm').submit()
+  }
+}
+</script>
 </body>
 </html>

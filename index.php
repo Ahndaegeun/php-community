@@ -1,5 +1,12 @@
 <?php
 require('lib/sql.php');
+
+session_start();
+
+$query = "select idx, title, date, author from contents";
+$result = mysqli_query($conn, $query);
+$row_count = mysqli_num_rows($result);
+
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +18,18 @@ require('lib/sql.php');
   <title>Hello</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
-
   <script src="./js/main.js" defer></script>
 </head>
 <body>
   <header>
     <h1><a href="/">Hello</a></h1>
+    <?php if(isset($_SESSION['userid'])){?>
+      <a href="logout-process.php">로그아웃</a>
+      <a href="preference.php?=id<?= $_SESSION['userid']?>">정보 수정</a>
+    <?php }else {?>
+      <a href="login.php">로그인</a>
+      <a href="signup.php">회원가입</a>
+    <?php }?> 
   </header>
   <main>
     <section>

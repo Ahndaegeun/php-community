@@ -1,17 +1,14 @@
 <?php
-// $host = 'kade0807.cafe24.com';
-$host = 'localhost';
-$user = 'kade0807';
-$pw = 'dAegeun1!';
-$dbName = 'kade0807';
+
+require('lib/sql.php');
+session_start();
 
 $idx = $_POST['idx'];
 $title = $_POST['title'];
-$author = $_POST['author'];
+$author = $_SESSION['userid'];
 $contents = $_POST['contents'];
 $date = date("Y-m-d", time());
 
-$conn = mysqli_connect($host, $user, $pw, $dbName);
 $query = "insert into contents (
   idx,
   title,
