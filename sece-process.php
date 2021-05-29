@@ -4,7 +4,7 @@ require('lib/sql.php');
 session_start();
 $idx = $_POST['idx'];
 
-$query = "delete from user where idx = $idx";
+$query = "update user set delstatus = 0 where idx = $idx";
 
 $res = mysqli_query($conn, $query);
 

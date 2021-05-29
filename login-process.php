@@ -2,12 +2,21 @@
 
 require('lib/sql.php');
 
-
-session_start();
-
-
 $userId = $_POST['userid'];
 $userPass = $_POST['userpass'];
+
+$statusCk = "select delstatus from user where userid = '".$userId."'";
+$statusResult = mysqli_query($conn, $statusCk);
+$statusRow = mysqli_fetch_row($statusResult);
+
+
+
+if(!$statusRow[0]) {
+  echo "<script>alert('탈퇴 했잖어'); location.href='index.php'</script>";
+  return;
+}
+
+session_start();
 
 
 // 로그인 결과 저장 변수
@@ -16,6 +25,7 @@ $loginCk = 0;
 // 아이디 존재 유무 확인
 $idCk = "select userId from user where userid = '$userId'";
 $idCkResult = mysqli_query($conn, $idCk);
+
 
 
 if ($idCkResult) {

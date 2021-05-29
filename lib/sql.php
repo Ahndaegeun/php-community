@@ -1,6 +1,6 @@
 <?php
-// $host = 'kade0807.cafe24.com';
-$host = 'localhost';
+$host = 'kade0807.cafe24.com';
+// $host = 'localhost';
 $user = 'kade0807';
 $pw = 'dAegeun1!';
 $dbName = 'kade0807';

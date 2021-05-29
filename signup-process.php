@@ -15,7 +15,8 @@ $sql = "insert into user values (
   '$userpw',
   '$username',
   '$usertell',
-  '$usermail'
+  '$usermail',
+  1
 )";
 
 mysqli_query($conn, $sql);
