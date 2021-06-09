@@ -1,0 +1,81 @@
+@import url(./global.css);
+
+.main__inner {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+/* Top */
+.top-wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.board-title {
+  font-size: 28px;
+}
+
+.write-btn {
+  display: block;
+  padding: 10px 20px;
+  font-size: 20px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* List */
+.list-wrapper {
+  width: 90%;
+  background: #fff;
+}
+
+.list-header,
+.list-item {
+  border: 1px solid #000;
+  display: flex;
+  background: #000;
+  gap: 1px;
+  margin-bottom: 10px;
+}
+
+.list-header li,
+.list-item li {
+  text-align: center;
+  background: #fff;
+  padding: 5px 0;
+  font-size: 20;
+}
+
+.list-header li:nth-child(1), .list-item li:nth-child(1) {width: 10%;}
+.list-header li:nth-child(2), .list-item li:nth-child(2) {width: 55%;}
+.list-header li:nth-child(3), .list-item li:nth-child(3) {width: 20%;}
+.list-header li:nth-child(4), .list-item li:nth-child(4) {width: 15%;}
+
+.list-body {
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  width: 100%;
+}
+
+.list-item:last-child {margin: 0;}
+
+.list-item li {
+  font-size: 24px;
+}
+
+/* Bottom */
+.page-num {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.page-num li a {
+  font-size: 20px;
+}

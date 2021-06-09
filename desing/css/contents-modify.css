@@ -1,0 +1,68 @@
+@import url(global.css);
+
+.main__inner {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.contents-header {
+  padding: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contents-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.contents-body {
+  width: 100%;
+  background: #fff;
+  height: 80%;
+  padding: 20px;
+  overflow-y: scroll;
+  border-radius: 5px;
+}
+
+.contents-body::-webkit-scrollbar {
+  width: 10px;
+}
+.contents-body::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.contents-body::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.contents-body textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+.modify-btn-group {
+  display: flex;
+  align-self: flex-end;
+}
+
+.modify-btn,
+.cancle-btn {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.cancle-btn {
+  margin-right: 10px;
+}
